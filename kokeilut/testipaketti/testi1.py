@@ -1,2 +1,4 @@
-print("Terve, Santtu!")
-print ("Hyvästi, Santtu!")
+print("Mikä nimesi on?")
+name=input()
+print("Hei")
+print (name)
