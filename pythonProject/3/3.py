@@ -9,7 +9,7 @@ if sukupuoli == 'N':
     elif hemoglobiini < 117:
         print('Hemoglobiiniarvosi on matala')
 
-if sukupuoli == 'M':
+elif sukupuoli == 'M':
     hemoglobiini = int(input('Anna hemoglobiinisi arvo: '))
     if hemoglobiini >= 195:
         print('Hemoglobiiniarvosi on korkea')
