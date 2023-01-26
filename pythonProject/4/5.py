@@ -7,8 +7,8 @@ password = ""
 
 while password!='rules' and username!='python' and count < 3:
 
-    username = input("Enter username: ")
-    password = input("Enter password: ")
+    username = input("Anna käyttäjänimi: ")
+    password = input("Anna salasana: ")
 
     if password=='rules' and username=='python':
      # if match, grand and break
