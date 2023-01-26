@@ -7,7 +7,7 @@ while True:
     numbers.append(int(number))
 
 numbers.sort(reverse=True)
-print("Viisi suurinta antamaasi lukua ovat:")
+print("Viisi suurinta antamaasi lukua:")
 for i in range(5):
     if i < len(numbers):
         print(numbers[i])

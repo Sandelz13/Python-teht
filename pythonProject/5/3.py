@@ -6,7 +6,7 @@ def is_prime(n):
             return False
     return True
 
-num = int(input("Anna kokonaisluku: "))
+num = int(input("Syötä kokonaisluku: "))
 if is_prime(num):
     print(num, "on alkuluku.")
 else:
