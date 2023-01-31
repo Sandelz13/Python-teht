@@ -1,17 +1,17 @@
 import random
 
 num = random.randint(1, 10)
-veikkaus = None
+guess = None
 
-while veikkaus != num:
-    veikkaus = input("Kokeile arvata numero 1-10: ")
-    veikkaus = int(veikkaus)
+while guess != num:
+    guess = input("Kokeile arvata numero 1-10: ")
+    guess = int(guess)
 
-    if veikkaus == num:
+    if guess == num:
         print("Oikein meni!")
         break
-    elif veikkaus < num:
+    elif guess < num:
         print("Liian pieni arvaus, kokeile uudestaan")
     else:
-        veikkaus > num
+        guess > num
         print("Liian suuri arvaus, kokeile uudestaan")

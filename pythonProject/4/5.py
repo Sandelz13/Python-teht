@@ -11,7 +11,6 @@ while password!='rules' and username!='python' and count < 3:
     password = input("Anna salasana: ")
 
     if password=='rules' and username=='python':
-     # if match, grand and break
      print("Tervetuloa")
      break
 

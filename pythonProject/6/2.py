@@ -9,5 +9,5 @@ max_value = dice_sides
 while True:
     number_on_dice = throw_dice(dice_sides)
     print("Silmäluku:", number_on_dice)
-    if number == max_value:
+    if number_on_dice == max_value:
         break
