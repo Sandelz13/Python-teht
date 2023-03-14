@@ -1,4 +1,4 @@
-pituus=int (input("Anna kuhan pituus: "))
+pituus=int(input("Anna kuhan pituus: "))
 if pituus < 37:
     print("Palauta järveen")
     vaje = 37-pituus
