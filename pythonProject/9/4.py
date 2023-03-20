@@ -51,7 +51,7 @@ print(f"Kuljettu matka: {car1.distance_travelled} km")
 
 car_list = []
 for i in range(1, 11):
-    reg_number = "ABC-" + str(i)
+    reg_number = "ABC-123-" + str(i)
     top_speed = random.randint(100, 200)
     new_car = Car(reg_number, top_speed, current_speed=0, distance_travelled=0)
     car_list.append(new_car)
