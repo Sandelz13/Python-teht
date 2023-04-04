@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="daaf9df2-c230-44ee-a3a0-5fc6c9933f21" name="Changes" comment="moduuli 12 tehtävät">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13/1.py" beforeDir="false" afterPath="$PROJECT_DIR$/13/1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/13/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/13/2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +99,9 @@
       <workItem from="1679796883251" duration="244000" />
       <workItem from="1680172276254" duration="380000" />
       <workItem from="1680244211498" duration="1692000" />
+      <workItem from="1680253011548" duration="21000" />
+      <workItem from="1680256302358" duration="1345000" />
+      <workItem from="1680643750056" duration="97000" />
     </task>
     <task id="LOCAL−00001" summary="2nd module">
       <created>1673582921016</created>

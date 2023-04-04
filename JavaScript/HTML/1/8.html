@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leap Years</title>
+</head>
+<body>
+	<h1>Leap Years</h1>
+	<p>Enter the start and end year:</p>
+	<label for="start-year">Start year:</label>
+	<input type="number" id="start-year" name="start-year">
+	<label for="end-year">End year:</label>
+	<input type="number" id="end-year" name="end-year">
+	<button onclick="printLeapYears()">Print Leap Years</button>
+	<ul id="leap-years-list"></ul>
+	<script>
+		function printLeapYears() {
+			var startYear = parseInt(document.getElementById("start-year").value);
+			var endYear = parseInt(document.getElementById("end-year").value);
+			var leapYears = [];
+			for (var year = startYear; year <= endYear; year++) {
+				if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+					leapYears.push(year);
+				}
+			}
+			var leapYearsList = document.getElementById("leap-years-list");
+			leapYearsList.innerHTML = "";
+			for (var i = 0; i < leapYears.length; i++) {
+				var listItem = document.createElement("li");
+				listItem.innerHTML = leapYears[i];
+				leapYearsList.appendChild(listItem);
+			}
+		}
+	</script>
+</body>
+</html>
+
