@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dog Names</title>
+  </head>
+  <body>
+    <h1>Dog Names</h1>
+    <p>Enter the names of six dogs:</p>
+    <input type="text" id="dogName1" placeholder="Dog 1">
+    <input type="text" id="dogName2" placeholder="Dog 2">
+    <input type="text" id="dogName3" placeholder="Dog 3">
+    <input type="text" id="dogName4" placeholder="Dog 4">
+    <input type="text" id="dogName5" placeholder="Dog 5">
+    <input type="text" id="dogName6" placeholder="Dog 6">
+    <button onclick="getDogNames()">Submit</button>
+    <div id="dogList"></div>
+
+    <script>
+      function getDogNames() {
+        const dogName1 = document.getElementById("dogName1").value;
+        const dogName2 = document.getElementById("dogName2").value;
+        const dogName3 = document.getElementById("dogName3").value;
+        const dogName4 = document.getElementById("dogName4").value;
+        const dogName5 = document.getElementById("dogName5").value;
+        const dogName6 = document.getElementById("dogName6").value;
+
+        const dogNames = [dogName1, dogName2, dogName3, dogName4, dogName5, dogName6];
+
+        dogNames.sort().reverse();
+
+        const dogList = document.getElementById("dogList");
+        dogList.innerHTML = "<ul>";
+        for (let i = 0; i < dogNames.length; i++) {
+          dogList.innerHTML += `<li>${dogNames[i]}</li>`;
+        }
+        dogList.innerHTML += "</ul>";
+      }
+    </script>
+  </body>
+</html>

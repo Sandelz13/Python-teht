@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Prompter</title>
+</head>
+<body>
+	<h1>Number Prompter</h1>
+	<p>Enter numbers and press OK. If you enter a number that has already been given, the program will stop and display all the given numbers in ascending order.</p>
+	<input type="number" id="number-input">
+	<button onclick="addNumber()">OK</button>
+	<p id="output"></p>
+
+	<script>
+		let numbers = [];
+
+		function addNumber() {
+			let input = document.getElementById("number-input").value;
+
+			if (numbers.includes(input)) {
+				alert("Number already given!");
+				printNumbers();
+			} else {
+				numbers.push(input);
+			}
+
+			document.getElementById("number-input").value = "";
+		}
+
+		function printNumbers() {
+			numbers.sort(function(a, b) {
+				return a - b;
+			});
+
+			document.getElementById("output").innerHTML = "Given numbers in ascending order: " + numbers.join(", ");
+		}
+	</script>
+</body>
+</html>

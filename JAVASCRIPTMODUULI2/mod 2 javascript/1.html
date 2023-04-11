@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse Order Program</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [];
+
+      for (let i = 0; i < 5; i++) {
+        const number = parseInt(prompt("Enter a number:"));
+        numbers.push(number);
+      }
+
+      document.write("<h2>Numbers in reverse order:</h2>");
+      for (let i = numbers.length - 1; i >= 0; i--) {
+        document.write(numbers[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>

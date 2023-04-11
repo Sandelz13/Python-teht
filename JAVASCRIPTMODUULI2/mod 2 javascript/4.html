@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Numbers</title>
+</head>
+<body>
+  <label>Enter numbers (enter 0 to stop):</label><br>
+  <button onclick="sortNumbers()">Insert numbers</button>
+  <ul id="numberList"></ul>
+  <script>
+    let numbers = [];
+
+    function sortNumbers() {
+      let number = prompt("Enter a number:");
+      while (Number(number) !== 0) {
+        numbers.push(Number(number));
+        number = prompt("Enter a number:");
+      }
+
+      numbers.sort(function(a, b) {
+        return b - a;
+      });
+
+      let numberList = document.getElementById("numberList");
+      for (let i = 0; i < numbers.length; i++) {
+        let listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(numbers[i]));
+        numberList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>

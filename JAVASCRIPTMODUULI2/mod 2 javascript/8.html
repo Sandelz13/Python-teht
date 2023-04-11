@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<p>The concatenated string is:</p>
+	<p id="result"></p>
+
+	<script>
+		function concat(arr) {
+		  let result = "";
+		  for (let i = 0; i < arr.length; i++) {
+		    result += arr[i];
+		  }
+		  return result;
+		}
+
+		const bands = ["Johnny", "DeeDee", "Joey", "Marky"];
+		const concatenated = concat(bands);
+
+		document.getElementById("result").innerHTML = concatenated;
+	</script>
+</body>
+</html>
+
+
