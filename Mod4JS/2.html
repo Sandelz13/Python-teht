@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TV Series Search</title>
+  </head>
+  <body>
+    <h1>TV Series Search</h1>
+    <form id="search-form">
+      <label for="query">Enter TV series name:</label>
+      <input id="query" name="q" type="text">
+      <input type="submit" value="Search">
+    </form>
+    <div id="results"></div>
+    <script>
+      const form = document.querySelector('#search-form');
+      const resultsContainer = document.querySelector('#results');
+
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const query = document.querySelector('#query').value;
+        const url = `https://api.tvmaze.com/search/shows?q=${query}`;
+
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data.length > 0) {
+            const show = data[0].show;
+
+            const name = show.name;
+            const summary = show.summary;
+            const image = show.image ? show.image.medium : '';
+
+            resultsContainer.innerHTML = `
+              <h2>${name}</h2>
+              ${image ? `<img src="${image}">` : ''}
+              <p>${summary}</p>
+            `;
+          } else {
+            resultsContainer.innerHTML = '<p>No results found</p>';
+          }
+        } catch (error) {
+          console.error(error);
+          resultsContainer.innerHTML = '<p>Error fetching results</p>';
+        }
+      });
+    </script>
+  </body>
+</html>

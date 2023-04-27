@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuck Norris Joke Generator</title>
+  </head>
+  <body>
+    <h1>Chuck Norris Joke Generator</h1>
+    <p>Click the button below to generate a random Chuck Norris joke:</p>
+    <button id="generate-joke">Generate Joke</button>
+    <p id="joke"></p>
+
+    <script>
+      const url = 'https://api.chucknorris.io/jokes/random';
+      const jokeElement = document.getElementById('joke');
+      const generateButton = document.getElementById('generate-joke');
+
+      generateButton.addEventListener('click', () => {
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            jokeElement.innerText = data.value;
+          })
+          .catch(error => {
+            console.error(error);
+            jokeElement.innerText = 'Failed to fetch Chuck Norris joke. Please try again later.';
+          });
+      });
+    </script>
+  </body>
+</html>

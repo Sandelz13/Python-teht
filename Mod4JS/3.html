@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TV Series Search</title>
+  </head>
+  <body>
+    <h1>TV Series Search</h1>
+    <form id="search-form">
+      <label for="query">Enter TV series name:</label>
+      <input id="query" name="q" type="text">
+      <input type="submit" value="Search">
+    </form>
+    <div id="results"></div>
+    <script>
+      const form = document.querySelector('#search-form');
+      const resultsContainer = document.querySelector('#results');
+
+      form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const query = document.querySelector('#query').value;
+        const url = `https://api.tvmaze.com/search/shows?q=${query}`;
+
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+
+          resultsContainer.innerHTML = '';
+
+          if (data.length > 0) {
+            for (const result of data) {
+              const show = result.show;
+
+              const name = show.name;
+              const url = show.url;
+              const image = show.image?.medium || '';
+              const summary = show.summary;
+
+              const article = document.createElement('article');
+              article.innerHTML = `
+                <h2>${name}</h2>
+                <a href="${url}" target="_blank">${url}</a>
+                <img src="${image}" alt="${name}">
+                <div>${summary}</div>
+              `;
+
+              resultsContainer.appendChild(article);
+            }
+          } else {
+            resultsContainer.innerHTML = '<p>No results found</p>';
+          }
+        } catch (error) {
+          console.error(error);
+          resultsContainer.innerHTML = '<p>Error fetching results</p>';
+        }
+      });
+    </script>
+  </body>
+</html>

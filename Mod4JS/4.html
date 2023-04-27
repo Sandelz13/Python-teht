@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TV Shows</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- TV show cards will be dynamically generated here -->
+    </div>
+
+    <script>
+      const container = document.querySelector('.container');
+
+      const getTVShows = async () => {
+        try {
+          const response = await fetch('https://api.tvmaze.com/shows');
+          const data = await response.json();
+
+          container.innerHTML = '';
+
+          data.forEach(tvShow => {
+            const imageSrc = tvShow.image ? tvShow.image.medium : 'https://via.placeholder.com/210x295?text=Not%20Found';
+
+            const tvShowCard = `
+              <div class="card">
+                <img src="${imageSrc}" alt="${tvShow.name} poster" onerror="this.onerror=null; this.src='https://via.placeholder.com/210x295?text=Not%20Found';">
+                <h3>${tvShow.name}</h3>
+              </div>
+            `;
+
+            container.innerHTML += tvShowCard;
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      getTVShows();
+    </script>
+  </body>
+</html>
